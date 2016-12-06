@@ -1,14 +1,14 @@
 {
   "repository": {
     "type": "git",
-    "url": "git+https://ryanshrum@github.com/BoomTownROI/BoomTap.git"
+    "url": "git@github.com:DavidAshenfelder/on-tap-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BoomTownROI/BoomTap/issues"
+    "url": "https://github.com/DavidAshenfelder/on-tap-app/issues"
   },
-  "homepage": "https://github.com/BoomTownROI/BoomTap#readme",
+  "homepage": "https://github.com/DavidAshenfelder/on-tap-app#readme",
   "name": "boomtap",
   "version": "1.0.0",
   "description": "An app for the tap.",
