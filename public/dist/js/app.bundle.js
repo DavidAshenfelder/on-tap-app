@@ -56337,8 +56337,8 @@
 
 	var Service = {
 	  get: function get(url) {
-	    return fetch(url).then(function (parseJSON) {
-	      return parseJSON.json();
+	    return fetch(url).then(function (response) {
+	      return response.json();
 	    });
 	  },
 	  post: function post() {
@@ -56353,7 +56353,9 @@
 	        'Content-Type': 'application/json'
 	      }
 	    };
-	    return fetch(url, postOptions).then(parseJSON);
+	    return fetch(url, postOptions).then(function (response) {
+	      return response.json();
+	    });
 	  },
 	  delete: function _delete() {
 	    var url = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
@@ -56367,7 +56369,9 @@
 	      },
 	      body: options
 	    };
-	    return fetch(url, postOptions).then(parseJSON);
+	    return fetch(url, postOptions).then(function (response) {
+	      return response.json();
+	    });
 	  }
 	};
 

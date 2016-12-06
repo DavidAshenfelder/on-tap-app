@@ -12,8 +12,8 @@ const parseJSON = (response) => {
 
 const Service = {
   get: (url) => {
-    return fetch(url).then(function(parseJSON) {
-      return parseJSON.json();
+    return fetch(url).then(function(response) {
+      return response.json();
     });
   },
   post: (url = '', options = {}) => {
@@ -25,7 +25,9 @@ const Service = {
         'Content-Type': 'application/json',
       },
     };
-    return fetch(url, postOptions).then(parseJSON);
+    return fetch(url, postOptions).then(function(response) {
+      return response.json();
+    });
   },
   delete: (url = '', options = {}) => {
     const postOptions = {
@@ -36,7 +38,9 @@ const Service = {
       },
       body: options,
     };
-    return fetch(url, postOptions).then(parseJSON);
+    return fetch(url, postOptions).then(function(response) {
+      return response.json();
+    });
   },
 };
 
