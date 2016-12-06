@@ -1,0 +1,24 @@
+@import './Mixins';
+
+.select {
+  @include button;
+  @include buttonBackground(
+    $color: $gray-dark,
+    $gradient1: $white,
+    $gradient2: #ededed,
+    $border: $gray-light,
+    $dropdown: true
+  );
+
+  @include media($small) {
+    padding: $padding--xsmall ($padding--xsmall * 2) $padding--xsmall $padding--xsmall;
+  }
+
+  @include media($medium-up) {
+    padding: $padding--xsmall ($padding--small * 2) $padding--xsmall $padding--small;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}

@@ -1,0 +1,135 @@
+@import '../../styles/Variables';
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wishList {
+  overflow: scroll;
+  height: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 980px;
+}
+
+.width {
+  width: 100%;
+}
+
+.round {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voteButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tap {
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 30px;
+  display: flex;
+  flex: 1 1 100%;
+  min-height: 400px;
+  -webkit-box-shadow: 0px 9px 10px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 9px 10px 0px rgba(0,0,0,0.37);
+  box-shadow: 0px 9px 10px 0px rgba(0,0,0,0.37);
+  margin-bottom: 2%;
+  overflow: hidden;
+  border: none;
+}
+
+.noTap {
+  border: 3px dashed $gray-light;
+}
+
+.header {
+  background: $boomtown-blue;
+  font-size: 1.5rem;
+  width: 100%;
+  color: $white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.margin5 {
+  margin: 5px;
+}
+
+.marginBottom20 {
+  margin-bottom: 20px;
+}
+
+.breweryLabel {
+  width: 125px;
+  height: 125px;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+}
+
+.delete {
+  border-radius: 100%;
+  margin: 5px;
+  background: white;
+  border: 2px solid $boomtown-blue;
+  color: $gray-light;
+  &:hover{
+    color: $brand-danger;
+  }
+}
+
+.save {
+  border-radius: 100%;
+  margin: 5px;
+  background: white;
+  border: 2px solid $boomtown-blue;
+  color: $gray-light;
+  &:hover{
+    color: $brand-success;
+  }
+}
+
+.voted {
+  opacity: .5;
+  border: 2px solid $gray;
+  &:hover {
+    border: 2px solid $gray !important;
+  }
+}
+
+.saveButtons {
+  margin: 10px;
+}
+
+.searchInput {
+  border-radius: 2rem !important;
+  border: 2px solid $boomtown-blue;
+  width: 100%;
+  text-align: center;
+}
+
+.duplicateMsg {
+  color: $brand-danger;
+}

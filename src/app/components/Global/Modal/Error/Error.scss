@@ -1,0 +1,7 @@
+.error {
+  composes: alert alert--danger from 'sass!../../../../styles/Alerts.scss';
+
+  &.errorHidden {
+    display: none;
+  }
+}

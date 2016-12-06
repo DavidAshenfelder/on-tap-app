@@ -1,0 +1,9 @@
+@import '../../../../styles/Variables';
+
+.footer {
+  background: $white;
+  border-top: 1px solid $gray-light;
+  overflow: hidden;
+  padding: $padding--large;
+  text-align: right;
+}

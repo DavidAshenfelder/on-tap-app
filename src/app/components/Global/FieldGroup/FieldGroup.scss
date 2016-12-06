@@ -1,0 +1,19 @@
+@import '../../../styles/Mixins';
+
+.fieldGroup {
+  @include media($large-up) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.item {
+  @include media($small-medium) {
+    width: 100%;
+
+    button,
+    input {
+      width: 100%;
+    }
+  }
+}

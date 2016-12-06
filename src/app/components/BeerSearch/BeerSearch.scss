@@ -1,0 +1,126 @@
+@import '../../styles/Variables';
+
+.beerTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 325px;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.width {
+  width: 100%;
+}
+
+.tap {
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  max-height: 650px;
+  -webkit-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  overflow: scroll;
+  border: none;
+}
+
+.header {
+  font-size: 1.5rem;
+  width: 100%;
+  color: $white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.kickedHeader {
+  background: $brand-danger;
+}
+
+.onTapHeader {
+  background: $boomtown-blue;
+}
+
+.kickedCardBlock {
+  opacity: .3;
+}
+
+.margin5 {
+  margin: 5px;
+}
+
+.marginBottom20 {
+  margin-bottom: 20px;
+}
+
+.tapped {
+  border-radius: 100%;
+  margin: 5px;
+  background: white;
+  border: 2px solid $boomtown-blue;
+  color: $gray-light;
+  &:hover {
+    color: $brand-warning;
+  }
+}
+
+.delete {
+  border-radius: 100%;
+  margin: 5px;
+  background: white;
+  border: 2px solid $boomtown-blue;
+  color: $gray-light;
+  &:hover{
+    color: $brand-danger;
+  }
+}
+
+.save {
+  border-radius: 100%;
+  margin: 5px;
+  background: white;
+  border: 2px solid $boomtown-blue;
+  color: $gray-light;
+  &:hover{
+    color: $brand-success;
+  }
+}
+
+.searchInput {
+  border-radius: 2rem !important;
+  border: 2px solid $boomtown-blue;
+}
+
+.saveButtons {
+  margin: 10px;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.breweryLabel {
+  width: 125px;
+  height: 125px;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+  box-shadow: 0px 9px 27px 0px rgba(0,0,0,0.37);
+}
+
+.cardBlock {
+  display: block;
+  color: $gray;
+  height: 330px;
+  overflow: scroll;
+}

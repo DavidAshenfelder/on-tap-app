@@ -1,0 +1,117 @@
+// Colors
+
+// BoomTown
+$boomtown-blue:   #1581e2;
+$boomtown-orange: #f68a24;
+
+// Bootstrap
+$alert-danger-bg:     #f2dede;
+$alert-danger-border: #ebccd1;
+$alert-danger-color:  #a94442;
+
+// Brand
+$brand-attention: $boomtown-orange;
+$brand-danger:    #D14836;
+$brand-dark:      #cccccc;
+$brand-default:   #bfbfbf;
+$brand-highlight: #f5fbff;
+$brand-info:      #5bc0de;
+$brand-primary:   $boomtown-blue;
+$brand-success:   #669900;
+$brand-warning:   #ffcc33;
+
+// Grays
+$white:         #ffffff;
+$gray-lightest: #f6f6f6;
+$gray-lighter:  #ececec;
+$gray-light:    $brand-dark;
+$gray:          #999999;
+$gray-dark:     #696969;
+$gray-darker:   #444444;
+$black:         #080808;
+
+// Cools
+$cool-light: #5f7f8e;
+$cool:       #394b54;
+$cool-dark:  #222c32;
+$cool-hover: #f2f9fc;
+
+// Pill map
+$color-map--pills: (
+  attention: #fde8d3,
+  danger:    #f5d2d4,
+  default:   #cecece,
+  info:      #def2f8,
+  primary:   #d0e6f9,
+  removable: $white,
+  success:   #e0ebcc,
+  warning:   #fff5d6
+);
+
+// Element Colors
+$color-link: $brand-primary;
+$color-link--hover: #0e599c;
+
+// Margins
+$margin-xxlarge: 20px;
+$margin-xlarge:  14px;
+$margin-large:   12px;
+$margin-medium:  10px;
+$margin-base:    8px;
+$margin-small:   6px;
+$margin-xsmall:  4px;
+
+// Padding
+$padding--xlarge:  24px;
+$padding--large:   16px;
+$padding--base:    12px;
+$padding--small:   10px;
+$padding--xsmall:  6px;
+
+// Font Weights
+// Reflects Roboto
+$font-weight--normal: 400;
+$font-weight--medium: 500;
+$font-weight--bold:   700;
+
+// Shadows
+$shadow-depth--1: 0 1px  3px  0 rgba(0, 0, 0, 0.1);
+$shadow-depth--2: 0 8px  17px 0 rgba(0, 0, 0, 0.2);
+
+// Shadows inset
+$shadow--inset: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+
+// Borders
+$border-size--small: 1px;
+
+$border-radius--small: 3px;
+$border-radius--large: 6px;
+
+// Grid / Breakpoints
+$medium-width: 568px;
+$large-width: 768px;
+$xlarge-width: 1024px;
+$xxlarge-width: 1200px;
+$max-width: 1280px;
+
+// Primary
+$small:      'max-width: #{$medium-width - 1}';
+$medium:     'min-width: #{$medium-width}', 'max-width: #{$large-width - 1}';
+$medium-up:  'min-width: #{$medium-width}';
+$large:      'min-width: #{$large-width}', 'max-width: #{$xlarge-width - 1}';
+$large-up:   'min-width: #{$large-width}';
+$xlarge:     'min-width: #{$xlarge-width}', 'max-width: #{$xxlarge-width - 1}';
+$xlarge-up:  'min-width: #{$xlarge-width}';
+$xxlarge:    'min-width: #{$xxlarge-width}', 'max-width: #{$max-width: - 1}';
+$xxlarge-up: 'min-width: #{$xxlarge-width}';
+$max:        'min-width: #{$max-width}';
+
+// Combos
+$small-medium:   'max-width: #{$large-width - 1}';
+$small-large:    'max-width: #{$xlarge-width - 1}';
+$small-xlarge:   'max-width: #{$xxlarge-width - 1}';
+$medium-large:   'min-width: #{$medium-width}', 'max-width: #{$xlarge-width - 1}';
+$medium-xlarge:  'min-width: #{$medium-width}', 'max-width: #{$xxlarge-width - 1}';
+$large-xlarge:   'min-width: #{$large-width}', 'max-width: #{$xxlarge-width - 1}';
+$large-xxlarge:  'min-width: #{$large-width}', 'max-width: #{$max-width: - 1}';
+$xlarge-xxlarge: 'min-width: #{$xlarge-width}', 'max-width: #{$max-width: - 1}';

@@ -1,0 +1,15 @@
+@import '../../../styles/Variables';
+
+.pills {
+  composes: grid from 'sass!../../../styles/Grid.scss';
+  composes: list--unmarked from 'sass!../../../styles/Lists.scss';
+  flex: 9; // basically, width: 90%
+  flex-wrap: wrap; // make sure the pills wrap inside the container
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pill {
+  margin-bottom: $margin-xsmall;
+  margin-right: $margin-xsmall + 3px;
+}

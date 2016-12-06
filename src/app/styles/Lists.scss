@@ -1,0 +1,14 @@
+@import './Variables';
+
+$list: list;
+
+.#{$list} {
+  &--unmarked {
+    list-style-type: none;
+  }
+
+  &__label {
+    // Using `margin` instead of `margin-right` to override bootstrap p margin property
+    margin: 0 $margin-base 0 0;
+  }
+}

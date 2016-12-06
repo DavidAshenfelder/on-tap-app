@@ -1,0 +1,161 @@
+@import './Variables';
+
+// Button
+@mixin button {
+  appearance: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: $font-weight--normal;
+  line-height: 1.4;
+  text-align: left;
+
+  &:not(.silent):not(.link):active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  &:not(.left):not(.middle):not(.right) + &:not(.left):not(.middle):not(.right) {
+    margin-left: $margin-medium;
+  }
+
+  @include field-group;
+}
+
+// Button Background
+@mixin buttonBackground(
+  $color,           // text color
+  $gradient1,       // top color of gradient
+  $gradient2,       // bottom color of gradient
+  $border,          // border color
+  $dropdown: false  // will add the caret
+) {
+  background-color: $gradient1;
+  border: $border-size--small solid $border;
+  color: $color;
+
+  @if $dropdown {
+    & {
+      background-image:
+        linear-gradient(to bottom, $gradient1 0%, $gradient2 100%);
+      background-position:
+        50% 50%;
+      background-repeat:
+        repeat-x;
+      background-size:
+        auto;
+    }
+
+    &:not([disabled]) {
+      &:focus,
+      &:hover {
+        background-image:
+          linear-gradient(to bottom, darken($gradient1, 4%), darken($gradient2, 5%));
+      }
+
+      &:active {
+        background-image:
+          linear-gradient(to bottom, $gradient1 0%, $gradient2 100%);
+      }
+    }
+  }
+
+  @else {
+    background-image: linear-gradient(to bottom, $gradient1 0%, $gradient2 100%);
+    background-repeat: repeat-x;
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus {
+        background-color: darken($gradient1, 4%);
+        background-image: linear-gradient(to bottom, darken($gradient1, 4%), darken($gradient2, 5%));
+      }
+    }
+  }
+}
+
+// Vertically centered
+@mixin vertically-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Visible
+@mixin visible($visible) {
+  @if $visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @else {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Border
+@mixin border($sides, $style) {
+  @if length($sides) == 4 or $sides == all {
+    border: $style;
+  }
+
+  @else {
+    @each $side in $sides {
+      border-#{$side}: $style;
+    }
+  }
+}
+
+@mixin field-group {
+  @include media($small-medium) {
+    border-radius: $border-radius--small;
+  }
+
+  @include media($large-up) {
+    &:not(.left):not(.middle):not(.right) {
+      border-radius: $border-radius--small;
+    }
+
+    &.left {
+      border-top-left-radius: $border-radius--small;
+      border-bottom-left-radius: $border-radius--small;
+    }
+
+    &.right {
+      border-top-right-radius: $border-radius--small;
+      border-bottom-right-radius: $border-radius--small;
+    }
+
+    &.left,
+    &.middle {
+      border-right: none;
+    }
+  }
+}
+
+// Media Queries
+@mixin media($query) {
+
+  $loop-to: length($query);
+  $media-query: "screen and ";
+  $i: 1;
+
+  @while $i <= $loop-to {
+
+    $media-query: $media-query + "(" + nth($query, $i) + ") ";
+
+    @if $i < $loop-to {
+      $media-query: $media-query + "and ";
+    }
+
+    $i: $i + 1;
+  }
+
+  @media #{$media-query} {
+    @content;
+  }
+}

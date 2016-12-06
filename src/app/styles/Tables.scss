@@ -1,0 +1,39 @@
+@import './Variables';
+
+.table {
+  border: 2px solid $gray-lighter;
+  border-radius: $border-radius--large;
+  overflow: hidden;
+  position: relative;
+
+  p {
+    margin: 0; // override bootstrap
+  }
+}
+
+.head {
+  align-items: center;
+  background: $gray-lightest;
+  font-weight: $font-weight--medium;
+  padding: $padding--base 0;
+  text-transform: uppercase;
+}
+
+.center {
+  composes: text--center from 'sass!./Utility.scss';
+}
+
+.row {
+  border-top: 1px solid $gray-lighter;
+  padding: $padding--base 0;
+}
+
+.cell {
+  padding: 0 $padding--small;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

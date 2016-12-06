@@ -1,0 +1,16 @@
+@import './Variables';
+
+.alert {
+  padding: $padding--large;
+  border: {
+    color: $gray-light;
+    style: solid;
+    width: 1px;
+  }
+
+  &--danger {
+    background: $alert-danger-bg;
+    border-color: $alert-danger-border;
+    color: $alert-danger-color;
+  }
+}

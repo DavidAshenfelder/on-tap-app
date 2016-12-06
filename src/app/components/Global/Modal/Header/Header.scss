@@ -1,0 +1,21 @@
+@import '../../../../styles/Mixins';
+
+.header {
+  composes: grid alignCenter from 'sass!../../../../styles/Grid.scss';
+  border-bottom: 1px solid $gray-light;
+  position: relative;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: $font-weight--medium;
+  margin: 0;
+}
+
+.padded {
+  padding: $padding--large;
+}
+
+.close {
+  composes: close from 'sass!../../Button/Button.scss';
+}

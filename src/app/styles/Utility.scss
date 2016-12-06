@@ -1,0 +1,64 @@
+@import './Mixins';
+
+:global {
+  html,
+  body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  body {
+    min-width: 100%; // this is to overide the min-width in global app.css
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.bold {
+  font-weight: $font-weight--medium;
+}
+
+.text {
+  &--center {
+    text-align: center;
+  }
+
+  &--success {
+    color: $brand-success;
+  }
+
+  &--danger {
+    color: $brand-danger;
+  }
+}
+
+.isHidden {
+  display: none !important;
+}
+
+// Support for responsive footer
+:global {
+  .st-footer {
+    @include media($small-medium) {
+      &__inner {
+        flex-flow: column;
+        height: auto;
+        padding-bottom: $padding--large;
+        padding-top: $padding--large;
+      }
+
+      &__logo,
+      &__nav,
+      &__refer {
+        margin: 0 0 $margin-small;
+      }
+
+      &__pipe {
+        display: none;
+      }
+    }
+  }
+}

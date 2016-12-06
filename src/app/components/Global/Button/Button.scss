@@ -1,0 +1,117 @@
+@import '../../../styles/Mixins';
+
+.button {
+  @include button;
+}
+
+// Sizes
+.xs {
+  padding: 1px $padding--xsmall;
+}
+
+.sm {
+  padding: 5px $padding--small;
+}
+
+.md {
+  padding: $padding--xsmall $padding--base;
+}
+
+.wide {
+  padding: $padding--xsmall $padding--xlarge;
+}
+
+.lg {
+  padding: $padding--small $padding--large;
+  font-size: 1.5rem;
+  line-height: 1.34;
+}
+
+.squareSmall {
+  height: 30px;
+  width: 30px;
+}
+
+.close {
+  @include vertically-centered;
+
+  color: $gray;
+  position: absolute;
+  right: $padding--large;
+
+  &:hover,
+  &:focus {
+    color: $gray-dark;
+  }
+}
+
+// Colors
+.silent,
+.link {
+  background: transparent;
+  border: none;
+}
+
+.link {
+  box-shadow: none;
+  color: $color-link;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    color: $color-link--hover;
+    text-decoration: underline;
+  }
+}
+
+.default {
+  @include buttonBackground(
+    $color: $gray-dark,
+    $gradient1: $white,
+    $gradient2: #ededed,
+    $border: $gray-light
+  );
+}
+
+.primary {
+  @include buttonBackground(
+    $color: $white,
+    $gradient1: $brand-primary,
+    $gradient2: #126ec1,
+    $border: #1374cb
+  );
+}
+
+.danger {
+  @include buttonBackground(
+    $color: $white,
+    $gradient1: $brand-danger,
+    $gradient2: #ac1b21,
+    $border: #b51d23
+  );
+}
+
+// Icon
+.icon {
+  &Left,
+  &Right {
+    font-size: 1rem;
+  }
+
+  &Left {
+    float: left;
+    margin: 4px $margin-small 0 0;
+  }
+
+  &Right {
+    float: right;
+    margin: 4px 0 0 $margin-small;
+  }
+
+  &Centered {
+    left: 50%;
+    margin: -0.5em 0 0 -0.5em;
+    position: absolute;
+    top: 50%;
+  }
+}

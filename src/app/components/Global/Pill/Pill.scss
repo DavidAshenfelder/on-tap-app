@@ -1,0 +1,64 @@
+@import '../../../styles/Mixins';
+
+.pill {
+  display: inline-block;
+  display: inline-flex;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+@each $color, $hex in $color-map--pills {
+  .#{$color} {
+    composes: pill;
+    color: darken($hex, 75%);
+
+    .left,
+    .right {
+      background-color: $hex;
+      padding: 2px 5px;
+    }
+
+    .right.split {
+      background-color: lighten($hex, 4%);
+    }
+  }
+}
+
+.left {
+  border-top-left-radius: $border-radius--small;
+  border-bottom-left-radius: $border-radius--small;
+
+  &:not(.split) {
+    border-top-right-radius: $border-radius--small;
+    border-bottom-right-radius: $border-radius--small;
+  }
+}
+
+.right {
+  border-top-right-radius: $border-radius--small;
+  border-bottom-right-radius: $border-radius--small;
+}
+
+.removable {
+  border-radius: $border-radius--small;
+  box-shadow: 0 0 2px rgba(10, 10, 10, 0.5);
+
+  .right {
+
+    &.split {
+      .rightValue {
+        padding-right: 5px;
+      }
+    }
+
+    &:not(.split) {
+      padding-left: 0;
+    }
+  }
+
+}
+
+.remove {
+  cursor: pointer;
+}

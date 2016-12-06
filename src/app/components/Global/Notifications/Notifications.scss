@@ -1,0 +1,71 @@
+@import '../../../styles/Animations';
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+
+.wrapper {
+  top: 0;
+  max-width: 400px;
+  position: fixed;
+  right: $margin-large;
+  width: calc(100% - #{$margin-large} - #{$margin-large} - 3px); // accounts for right and left offset and the extra 3px found in the right property.
+  z-index: 1013;
+
+}
+
+.backdrop {
+  @include visible(true);
+  background: rgba($black, 0.5);
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1011; // one more than .st-header
+
+}
+
+.notification {
+  align-items: stretch;
+  animation: fadeAndSlideFromRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background: $white;
+  box-shadow: $shadow-depth--2;
+  display: flex;
+  margin-top: $margin-large;
+  width: 100%;
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+@each $color, $hex in $color-map--pills {
+  .#{$color} {
+    background-color: $hex;
+    color: darken($hex, 60%);
+  }
+}
+
+.icon {
+  align-items: center;
+  display: flex;
+  font-size: 2.6rem;
+  padding: 1.2rem;
+}
+
+.message {
+  margin: 0;
+  padding: $padding--large $padding--base;
+}
+
+.close {
+  color: $gray-light;
+  position: absolute;
+  top: $margin-small;
+  right: 0;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: $gray;
+  }
+}

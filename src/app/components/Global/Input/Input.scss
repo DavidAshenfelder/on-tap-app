@@ -1,0 +1,7 @@
+@import '../../../styles/Mixins';
+
+.input {
+  composes: input from 'sass!../../../styles/Inputs.scss';
+
+  @include field-group;
+}

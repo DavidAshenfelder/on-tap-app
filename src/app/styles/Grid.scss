@@ -1,0 +1,35 @@
+$columns: 12;
+
+.grid {
+  display: flex;
+}
+
+.col {
+  @for $i from 1 through $columns {
+    &#{$i} {
+      $width: $i / $columns * 100%;
+      flex: 1 1 $width;
+      max-width: $width;
+    }
+  }
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.align {
+  &Center {
+    align-items: center;
+  }
+
+  &Start {
+    align-items: flex-start;
+  }
+}
+
+.right {
+  flex: 1 0 auto;
+  margin-left: auto;
+  text-align: right;
+}

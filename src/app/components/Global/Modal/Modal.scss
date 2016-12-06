@@ -1,0 +1,59 @@
+@import '../../../styles/Variables';
+@import '../../../styles/Mixins';
+
+.wrapper {
+  display: block;
+
+  &.wrapperHidden {
+    display: none;
+  }
+}
+
+.backdrop {
+  @include visible(true);
+  background: rgba($black, 0.5);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1011; // one more than .st-header
+
+  .wrapperHidden & {
+    @include visible(false);
+  }
+}
+
+.modal {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1012; // one more than .backdrop
+
+  .wrapperHidden & {
+    display: none;
+  }
+}
+
+.dialog {
+  background: $white;
+  border-radius: $border-radius--large;
+  border: 1px solid $gray-light;
+  box-shadow: $shadow-depth--2;
+  display: block;
+  max-height: 100%;
+  max-width: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+
+  .wrapperHidden & {
+    display: none;
+  }
+}

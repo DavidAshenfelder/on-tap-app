@@ -1,0 +1,9 @@
+@import './Variables';
+
+.label {
+  font-weight: $font-weight--normal;
+
+  .checkbox {
+    margin-right: $margin-medium;
+  }
+}
