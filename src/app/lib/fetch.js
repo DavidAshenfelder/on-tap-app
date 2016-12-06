@@ -12,7 +12,9 @@ const parseJSON = (response) => {
 
 const Service = {
   get: (url) => {
-    return fetch(url).then(parseJSON);
+    return fetch(url).then(function(parseJSON) {
+      return parseJSON.json();
+    });
   },
   post: (url = '', options = {}) => {
     const postOptions = {

@@ -18,8 +18,6 @@ const adminPassword = config.adminPassword;
 
 const app = express();
 
-console.log(config);
-
 mongoose.connect(config.database);
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');

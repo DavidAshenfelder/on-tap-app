@@ -98,7 +98,7 @@ const BeerWishList = React.createClass({
         const idx = this.state.beerWishList.length;
         let newWishList = mergeArray(this.state.beerWishList, idx, newBeer);
         newWishList = _.orderBy(newWishList, (b) => {
-          return b.votes.total;
+          return b.votes.total || 0;
         }, ['desc']);
         this.setState(
           {
@@ -226,7 +226,7 @@ const BeerWishList = React.createClass({
     return Service.wishListVote(beer.bid, newParams).then((res) => {
       let newList = mergeArray(this.state.beerWishList, idx, res);
       newList = _.orderBy(newList, (b) => {
-        return b.votes.total;
+        return b.votes.total || 0;
       }, ['desc']);
       this.setState({ ...this.state, beerWishList: newList });
     });

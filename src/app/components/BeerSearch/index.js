@@ -67,7 +67,6 @@ const BeerSearch = React.createClass({
 
   searchBeers(term) {
     Service.searchBeers(term).then((data) => {
-      console.log(data);
       this.setState({ ...this.state, beerList: data });
     });
   },

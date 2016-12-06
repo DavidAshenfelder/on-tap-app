@@ -50126,7 +50126,6 @@
 	    var _this2 = this;
 
 	    _Service2.default.searchBeers(term).then(function (data) {
-	      console.log(data);
 	      _this2.setState(_extends({}, _this2.state, { beerList: data }));
 	    });
 	  },
@@ -56279,8 +56278,10 @@
 	    var url = '/wishlist/beers';
 	    return _fetch2.default.get(url).then(function (res) {
 	      return _lodash2.default.orderBy(res, function (b) {
-	        return b.votes.total;
+	        return b.votes.total || 0;
 	      }, ['desc']);
+	    }).catch(function (err) {
+	      return err;
 	    });
 	  },
 	  SaveToWishList: function SaveToWishList(bid, params) {
@@ -56303,7 +56304,6 @@
 	    var id = params.beer.bid;
 	    var url = '/wishlist/beer/delete/' + id;
 	    return _fetch2.default.post(url, params).then(function (res) {
-	      console.log('res', res);
 	      return res;
 	    }).catch(function (err) {
 	      return err;
@@ -56337,7 +56337,9 @@
 
 	var Service = {
 	  get: function get(url) {
-	    return fetch(url).then(parseJSON);
+	    return fetch(url).then(function (parseJSON) {
+	      return parseJSON.json();
+	    });
 	  },
 	  post: function post() {
 	    var url = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
@@ -57398,7 +57400,7 @@
 	        var idx = _this4.state.beerWishList.length;
 	        var newWishList = (0, _immutable.mergeArray)(_this4.state.beerWishList, idx, newBeer);
 	        newWishList = _lodash2.default.orderBy(newWishList, function (b) {
-	          return b.votes.total;
+	          return b.votes.total || 0;
 	        }, ['desc']);
 	        _this4.setState(_extends({}, _this4.state, {
 	          beerWishList: newWishList,
@@ -57519,7 +57521,7 @@
 	    return _Service2.default.wishListVote(beer.bid, newParams).then(function (res) {
 	      var newList = (0, _immutable.mergeArray)(_this7.state.beerWishList, idx, res);
 	      newList = _lodash2.default.orderBy(newList, function (b) {
-	        return b.votes.total;
+	        return b.votes.total || 0;
 	      }, ['desc']);
 	      _this7.setState(_extends({}, _this7.state, { beerWishList: newList }));
 	    });

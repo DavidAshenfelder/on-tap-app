@@ -43,8 +43,10 @@ const Service = {
     const url = '/wishlist/beers';
     return fetch.get(url).then((res) => {
       return _.orderBy(res, (b) => {
-        return b.votes.total;
+        return b.votes.total || 0;
       }, ['desc']);
+    }).catch((err) => {
+      return err;
     });
   },
   SaveToWishList(bid, params) {
@@ -67,7 +69,6 @@ const Service = {
     const id = params.beer.bid;
     const url = `/wishlist/beer/delete/${id}`;
     return fetch.post(url, params).then((res) => {
-      console.log('res', res);
       return res;
     }).catch((err) => {
       return err;
