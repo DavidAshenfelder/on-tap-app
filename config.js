@@ -1,5 +1,5 @@
 module.exports = {
-  database: process.env.MONGO_URI || 'localhost/boomtap',
+  database: process.env.MONGODB_URI || 'localhost/boomtap',
   port: process.env.PORT || 3000,
   clientId: process.env.CLIENT_ID || '71fb40b84a5c2abb0dc3019872414e7c',
   clientSecret: process.env.CLIENT_SECRET || '59b634e2c247c98b353fa2098133956c',
