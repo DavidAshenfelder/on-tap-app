@@ -18,7 +18,7 @@
     "watch": "node ./node_modules/webpack/bin/webpack --config ./webpack.config.js --progress --colors --watch",
     "build": "node ./node_modules/webpack/bin/webpack",
     "dev": "npm run watch & nodemon server.js",
-    "start": "nodemon server.js"
+    "start": "node server.js && nodemon ./bin/www"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
