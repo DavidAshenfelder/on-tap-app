@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const request = require('request');
 const moment = require('moment');
-const slackbot = require('slackbots');
+// const slackbot = require('slackbots');
 const Beer = require('./models/beer');
 const WishList = require('./models/beerWishList');
 
@@ -23,14 +23,14 @@ mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?');
 });
 
-const BeerBot = new slackbot({
-    token: config.beerbotToken,
-    name: config.beerbotName
-});
-
-BeerBot.on('start', function() {
-  console.log('BeerBot is up!');
-});
+// const BeerBot = new slackbot({
+//     token: config.beerbotToken,
+//     name: config.beerbotName
+// });
+//
+// BeerBot.on('start', function() {
+//   console.log('BeerBot is up!');
+// });
 
 app.set('port', config.port);
 app.use(logger('dev'));
@@ -74,8 +74,8 @@ app.post('/admin/beer/:tap/:id', (req, res, next) => {
     });
     beer.save(function (err) {
       if(err) return next({ err });
-      const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.general : config.beerbotChannels.boomtap;
-      BeerBot.postMessageToChannel(sendChannel, `Tap ${req.params.tap}: ${beer.brewery_name} ${beer.beer_name} is now on tap`, config.beerbotParams);
+      // const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.general : config.beerbotChannels.boomtap;
+      // BeerBot.postMessageToChannel(sendChannel, `Tap ${req.params.tap}: ${beer.brewery_name} ${beer.beer_name} is now on tap`, config.beerbotParams);
       res.send({ status: 200, response: { beer, text: `Successfully saved ${body.beer_name} to ${req.params.tap} tap` } });
     });
   });
@@ -142,8 +142,8 @@ app.post('/admin/tap/delete/:tap', (req, res, next) => {
     console.log(beer);
     Beer.remove({ tap: req.params.tap }, (err) => {
       if(err) return next({ err });
-      const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.general : config.beerbotChannels.boomtap;
-      BeerBot.postMessageToChannel(sendChannel, `Tap ${req.params.tap}: ${beer.brewery_name} ${beer.beer_name} was taken off tap. Stay tuned for a new great beer coming soon.`, config.beerbotParams);
+      // const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.general : config.beerbotChannels.boomtap;
+      // BeerBot.postMessageToChannel(sendChannel, `Tap ${req.params.tap}: ${beer.brewery_name} ${beer.beer_name} was taken off tap. Stay tuned for a new great beer coming soon.`, config.beerbotParams);
       res.send({ status: 200, response: `Successfully deleted beer` });
     });
   });
@@ -198,8 +198,8 @@ app.get('/beers/tapped/:id', (req, res, next) => {
     console.log("secs", secs._milliseconds)
     const time = Math.floor(secs.asHours()) + moment.utc(diff).format(":mm:ss");
     console.log(`${beer.beerName} kicked after ${time}`);
-    const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.beerbarons : config.beerbotChannels.boomtap;
-    BeerBot.postMessageToChannel(sendChannel, `Tap ${beer.tap}: ${beer.brewery_name} ${beer.beer_name} kicked after ${time}`, config.beerbotParams);
+    // const sendChannel = process.env.NODE_ENV == 'production' ? config.beerbotChannels.beerbarons : config.beerbotChannels.boomtap;
+    // BeerBot.postMessageToChannel(sendChannel, `Tap ${beer.tap}: ${beer.brewery_name} ${beer.beer_name} kicked after ${time}`, config.beerbotParams);
     res.send(beer);
   });
 });
