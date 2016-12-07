@@ -404,6 +404,9 @@ body {
   box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
   overflow: scroll;
   border: none; }
+  @media (max-width: 767px) {
+    .BeerSearch__tap___B1gMG {
+      height: 500px; } }
 
 .BeerSearch__header___x7Uer {
   font-size: 1.5rem;
