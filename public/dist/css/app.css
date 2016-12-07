@@ -1,5 +1,4 @@
-html, body {
-  height: 100%;
+body {
   background: #facb6c;
   background: -moz-linear-gradient(top, #facb6c 0%, #facb6c 32%, #ff740a 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #facb6c), color-stop(32%, #facb6c), color-stop(100%, #ff740a));
@@ -8,9 +7,12 @@ html, body {
   background: -ms-linear-gradient(top, #facb6c 0%, #facb6c 32%, #ff740a 100%);
   background: linear-gradient(to bottom, #facb6c 0%, #facb6c 32%, #ff740a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#facb6c', endColorstr='#ff740a', GradientType=0 );
-  background-size: cover; }
-
-body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px; }
   body * {
@@ -27,12 +29,12 @@ body {
   width: 100%; }
 
 .app__beerTaps___1fV4a {
-  overflow: hidden;
   display: flex;
+  padding-top: 2%;
+  padding-bottom: 2%;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  align-items: stretch;
   height: 85%;
   overflow: scroll; }
 
@@ -62,26 +64,27 @@ body {
   margin-bottom: 5px; }
   @media (max-width: 767px) {
     .app__login___1Y-wa {
-      position: absolute;
       top: 10px;
-      width: 50%;
-      left: 0px; } }
+      width: 30%; } }
 
 .app__pic___ndHat {
   border-radius: 100%;
   width: 50px;
   height: 50px;
-  margin-right: 10px;
   -webkit-box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
   box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37); }
+  @media (max-width: 767px) {
+    .app__pic___ndHat {
+      height: 35px;
+      width: 35px; } }
 
 .app__logoPic___h8wvO {
   height: 90px;
   width: auto; }
   @media (max-width: 767px) {
     .app__logoPic___h8wvO {
-      height: 50px; } }
+      height: 60px; } }
 
 .app__user___n3RNN {
   font-size: 1.2rem;
@@ -93,20 +96,22 @@ body {
   padding: 10px; }
   @media (max-width: 767px) {
     .app__user___n3RNN {
-      position: absolute;
-      top: 10px;
-      right: 0px;
-      width: 50%;
-      font-size: .8rem; } }
+      width: 25%;
+      word-wrap: break-word; } }
+
+@media (max-width: 767px) {
+  .app__userName___yattp {
+    font-size: .7rem;
+    justify-content: center; } }
 
 .app__userHeader___2MQ-B {
   margin-top: 10px;
   width: 100%;
-  height: 10vh;
+  padding-bottom: 1%;
+  border-bottom: 3px solid #f68a24;
   display: inline-flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; }
+  align-items: center; }
 .Dropdown__dropdown___26aKr {
   position: relative;
   width: 100%; }
@@ -393,7 +398,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  max-height: 650px;
+  height: 600px;
   -webkit-box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
   box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.37);
@@ -471,8 +476,7 @@ body {
 .BeerSearch__cardBlock___1_ZOW {
   display: block;
   color: #999999;
-  height: 330px;
-  overflow: scroll; }
+  height: 330px; }
 .ConfirmModal__body___1uMK4 {
   margin: 0; }
 .Modal__wrapper___23msz {

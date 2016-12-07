@@ -29544,7 +29544,7 @@
 	      _react2.default.createElement('img', { width: '25px', height: '25px', className: _app2.default.pic, alt: '', src: this.state.user.imageUrl }),
 	      _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: _app2.default.userName },
 	        this.state.user.name
 	      )
 	    );
@@ -50021,7 +50021,7 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"beerTaps":"app__beerTaps___1fV4a","appWrapper":"app__appWrapper___txPCC","googleLogin":"app__googleLogin___m7rcj","login":"app__login___1Y-wa","pic":"app__pic___ndHat","logoPic":"app__logoPic___h8wvO","user":"app__user___n3RNN","userHeader":"app__userHeader___2MQ-B"};
+	module.exports = {"beerTaps":"app__beerTaps___1fV4a","appWrapper":"app__appWrapper___txPCC","googleLogin":"app__googleLogin___m7rcj","login":"app__login___1Y-wa","pic":"app__pic___ndHat","logoPic":"app__logoPic___h8wvO","user":"app__user___n3RNN","userName":"app__userName___yattp","userHeader":"app__userHeader___2MQ-B"};
 
 /***/ },
 /* 510 */,

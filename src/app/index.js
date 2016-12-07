@@ -92,7 +92,7 @@ const App = React.createClass({
     return (
       <div>
         <img width='25px' height='25px' className={styles.pic} alt='' src={this.state.user.imageUrl} />
-        <div>
+        <div className={styles.userName}>
           {this.state.user.name}
         </div>
       </div>
