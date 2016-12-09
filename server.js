@@ -153,6 +153,7 @@ app.post('/admin/tap/delete/:tap', (req, res, next) => {
 app.get('/beers', (req, res, next) => {
   Beer.find((err, beers) => {
     if(err) return next(err);
+    console.log('beers', beers);
     res.send(beers);
   });
 });
