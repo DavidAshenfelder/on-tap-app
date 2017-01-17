@@ -15,7 +15,7 @@ const App = React.createClass({
     return (
     {
       onTap: [],
-      numberOfTaps: 3,
+      numberOfTaps: 6,
       tapList: [],
       beerWishList: [],
       user: setUser,
@@ -36,6 +36,7 @@ const App = React.createClass({
   buildTaps(data) {
     let i = 1;
     const tapList = [];
+    console.log(this.state.numberOfTaps);
     while (i <= this.state.numberOfTaps) {
       const retBeer = ({ tap: i, beer: null });
       tapList.push(retBeer);
